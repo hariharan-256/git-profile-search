@@ -1,0 +1,168 @@
+* {
+	box-sizing: border-box;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p {
+	padding: 0;
+	margin: 0;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+p {
+	padding-bottom: 15px;
+}
+// variables
+$black: #353935;
+$white: #ffff;
+$violet: #09203f;
+$sky: #537895;
+
+body {
+	background-color: #0093e9;
+	background-image: linear-gradient(160deg, $violet 0%, $sky 100%);
+	font-family: "Lato", sans-serif;
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// flex-direction: column;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100vh;
+	// height: 100vh;
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+}
+// mixins
+@mixin flexstart {
+	display: flex;
+	align-items: center;
+}
+// input styles
+form {
+	width: 100%;
+	margin-bottom: 2rem;
+}
+input {
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(2px);
+	padding: 1rem;
+	width: 100%;
+	border: 0;
+	border-radius: 5px;
+	color: $white;
+	&::placeholder {
+		color: $white;
+	}
+	&:focus {
+		box-shadow: none;
+		outline: none;
+	}
+}
+#main {
+	width: 100%;
+}
+.title h2 {
+	color: $white;
+	padding-bottom: 35px;
+}
+// user card styles
+.user {
+	&-card {
+		flex-direction: column;
+		align-items: center;
+		@include flexstart();
+		background-color: $white;
+		padding: 1rem;
+		border-radius: 10px;
+		width: 100%;
+		background: rgba(255, 255, 255, 0.05);
+		backdrop-filter: blur(2px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-right-color: rgba(255, 255, 255, 0.1);
+		border-bottom-color: rgba(255, 255, 255, 0.1);
+		box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+		color: $white;
+		margin-bottom: 25px;
+	}
+	&-avatar {
+		width: 180px;
+		height: 180px;
+		border-radius: 50%;
+	}
+	&-info {
+		margin: 16px 0 0;
+		h2 {
+			font-size: 24px;
+			line-height: 30px;
+			padding-bottom: 10px;
+		}
+		ul {
+			margin-bottom: 2rem;
+		}
+		li {
+			border: 1px solid $white;
+			border-radius: 30px;
+			padding: 3px 20px;
+			display: inline-block;
+			font-size: 16px;
+			line-height: 22px;
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			&:last-child {
+				margin-right: 0;
+			}
+			strong {
+				margin-left: 6px;
+			}
+		}
+	}
+	&-repo {
+		display: inline-block;
+		color: $white;
+		border: 1px solid $white;
+		border-radius: 3px;
+		padding: 8px 10px 10px;
+		margin-right: 0.7rem;
+		margin-bottom: 0.7rem;
+		transition: all 0.3s ease-in;
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
+	}
+}
+
+@media (min-width: 960px) {
+	.container,
+	form {
+		width: 900px;
+	}
+	.user {
+		&-card {
+			flex-direction: row;
+			align-items: flex-start;
+		}
+		&-info {
+			margin-left: 2rem;
+		}
+	}
+}
