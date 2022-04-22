@@ -1,3 +1,3 @@
 # git-profile-search
 
-![image](./img/Git_Profile_Search_AdobeCreativeCloudExpress.gif);
+<img src="./img/Git_Profile_Search_AdobeCreativeCloudExpress.gif" width="800" height="900">
